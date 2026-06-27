@@ -21,6 +21,68 @@ export default function Portfolio() {
     }
   };
 
+  //porjects array
+
+  const projects = [
+    {
+      title: "Portfolio Website",
+      badge: "Personal Project",
+      badgeColor: "bg-green-500/10 text-green-500",
+      description:
+        "Designed and developed a personal portfolio website to showcase skills, projects, and experience. Built with modern web technologies featuring responsive design, smooth navigation, and PDF resume generation functionality.",
+      tech: [
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite",
+        "Lucide Icons",
+      ],
+      link: "",
+      current: true,
+    },
+    {
+      title: "Crochet Store",
+      badge: "Full Stack",
+      badgeColor: "bg-pink-500/10 text-pink-500",
+      description:
+        "A modern crochet e-commerce application with product browsing, ordering, admin panel, and Supabase backend.",
+      tech: [
+        "React Native",
+        "Expo",
+        "Supabase",
+        "TypeScript",
+        "Admin Panel",
+      ],
+      link: "https://crochet-app-iota.vercel.app/",
+      current: false,
+    },
+    {
+      title: "NextShop",
+      badge: "E-Commerce",
+      badgeColor: "bg-secondary/20 text-secondary",
+      description:
+        "Collaborated on building an e-commerce web application using React.js while improving frontend pages, responsiveness, and performance.",
+      tech: [
+        "React.js",
+        "Frontend",
+        "Performance Optimization",
+        "Responsive Design",
+      ],
+      link: "https://vibesta.netlify.app/",
+      current: false,
+    },
+    {
+      title: "Java-Based Task Manager",
+      badge: "Mini Project",
+      badgeColor: "bg-primary/10 text-primary",
+      description:
+        "Developed a console-based task manager using Java with Object-Oriented Programming concepts.",
+      tech: ["Java", "OOP", "Console Application"],
+      link: "",
+      current: false,
+    },
+  ];
+
   const generateResumePDF = () => {
     // Create a new window with resume content for printing/saving as PDF
     const resumeContent = `
@@ -257,7 +319,7 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            
+
             <div className="hidden md:flex gap-8">
               <button
                 onClick={() => scrollToSection("about")}
@@ -310,7 +372,7 @@ export default function Portfolio() {
                 Krishna <span className="text-primary">Verma</span>
               </h1>
               <p className="text-xl text-muted-foreground">
-                B.Tech Computer Science (AI & ML) | Full-Stack Developer | Problem Solver
+                B.Tech Computer Science (AI & ML) | Full-Stack, Web & App Developer | Problem Solver
               </p>
               <div className="flex flex-col gap-3 text-muted-foreground">
                 <div className="flex items-center gap-3">
@@ -338,7 +400,7 @@ export default function Portfolio() {
               </div>
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="[github.com](https://github.com/krishnav3rma)"
+                  href="(https://github.com/krishnav3rma"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
@@ -347,7 +409,7 @@ export default function Portfolio() {
                   GitHub
                 </a>
                 <a
-                  href="[vibesta.netlify.app](https://vibesta.netlify.app/)"
+                  href="https://vibesta.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors font-medium"
@@ -434,116 +496,62 @@ export default function Portfolio() {
         id="experience"
         className="py-20 px-4 sm:px-6 lg:px-8 bg-background"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-4xl font-bold mb-4">Projects</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-          </div>
-          <div className="space-y-6">
-            {/* Portfolio Website - NEW PROJECT */}
-            <div className="bg-muted/30 rounded-lg p-8 border border-border hover:border-primary/50 transition-all hover:shadow-lg">
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-2xl font-bold">Portfolio Website</h3>
-                <span className="inline-block px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-sm font-medium">
-                  Personal Project
-                </span>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                Designed and developed a personal portfolio website to showcase
-                skills, projects, and experience. Built with modern web
-                technologies featuring responsive design, smooth navigation, and
-                PDF resume generation functionality.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  React.js
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  TypeScript
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Tailwind CSS
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Vite
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Lucide Icons
-                </span>
-              </div>
-              <span className="inline-flex items-center gap-2 text-green-500 font-medium">
-                Currently Viewing
+        <div className="max-w-6xl mx-auto"></div>
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold mb-4">Projects</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+        </div>
+        <div className="space-y-6"></div>
+
+        {projects.map((project) => (
+          <div
+            key={project.title}
+            className="bg-muted/30 rounded-lg p-8 border border-border hover:border-primary/50 transition-all hover:shadow-lg"
+          >
+            <div className="flex items-start justify-between mb-3">
+              <h3 className="text-2xl font-bold">{project.title}</h3>
+
+              <span
+                className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${project.badgeColor}`}
+              >
+                {project.badge}
               </span>
             </div>
 
-            {/* NextShop */}
-            <div className="bg-muted/30 rounded-lg p-8 border border-border hover:border-primary/50 transition-all hover:shadow-lg">
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-2xl font-bold">NextShop</h3>
-                <span className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-medium">
-                  E-Commerce
+            <p className="text-muted-foreground mb-4">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1 bg-primary/10 text-primary rounded text-sm"
+                >
+                  {item}
                 </span>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                Collaborated on building an e-commerce web application using
-                React.js, focusing on developing and improving the frontend
-                pages for a smooth and user-friendly experience. Contributed to
-                optimizing performance and ensuring the application was
-                responsive and easy to navigate.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  React.js
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Frontend
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Performance Optimization
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Responsive Design
-                </span>
-              </div>
-              <a
-                href="[vibesta.netlify.app](https://vibesta.netlify.app/)"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all font-medium"
-              >
-                View Live Project
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              ))}
             </div>
 
-            {/* Java Task Manager */}
-            <div className="bg-muted/30 rounded-lg p-8 border border-border hover:border-primary/50 transition-all hover:shadow-lg">
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-2xl font-bold">Java-Based Task Manager</h3>
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                  Mini Project
-                </span>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                Developed a console-based task manager using Java with
-                Object-Oriented Programming concepts. The application
-                demonstrates strong understanding of OOP principles and clean
-                code practices.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Java
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  OOP
-                </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded text-sm">
-                  Console Application
-                </span>
-              </div>
-            </div>
+            {project.current ? (
+              <span className="inline-flex items-center gap-2 text-green-500 font-medium">
+                Currently Viewing
+              </span>
+            ) : (
+              project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all font-medium"
+                >
+                  View Live Project
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )
+            )}
           </div>
-        </div>
+        ))}
       </section>
 
       {/* Education Section */}
