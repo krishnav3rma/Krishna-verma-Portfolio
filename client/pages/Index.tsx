@@ -400,7 +400,7 @@ export default function Portfolio() {
               </div>
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="(https://github.com/krishnav3rma"
+                  href="https://github.com/krishnav3rma"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
@@ -496,62 +496,64 @@ export default function Portfolio() {
         id="experience"
         className="py-20 px-4 sm:px-6 lg:px-8 bg-background"
       >
-        <div className="max-w-6xl mx-auto"></div>
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-4">Projects</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-        </div>
-        <div className="space-y-6"></div>
-
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="bg-muted/30 rounded-lg p-8 border border-border hover:border-primary/50 transition-all hover:shadow-lg"
-          >
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="text-2xl font-bold">{project.title}</h3>
-
-              <span
-                className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${project.badgeColor}`}
-              >
-                {project.badge}
-              </span>
-            </div>
-
-            <p className="text-muted-foreground mb-4">
-              {project.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((item) => (
-                <span
-                  key={item}
-                  className="px-3 py-1 bg-primary/10 text-primary rounded text-sm"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            {project.current ? (
-              <span className="inline-flex items-center gap-2 text-green-500 font-medium">
-                Currently Viewing
-              </span>
-            ) : (
-              project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all font-medium"
-                >
-                  View Live Project
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              )
-            )}
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold mb-4">Projects</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
           </div>
-        ))}
+          <div className="space-y-6">
+
+            {projects.map((project) => (
+              <div
+                key={project.title}
+                className="bg-muted/30 rounded-lg p-8 border border-border hover:border-primary/50 transition-all hover:shadow-lg"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-2xl font-bold">{project.title}</h3>
+
+                  <span
+                    className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${project.badgeColor}`}
+                  >
+                    {project.badge}
+                  </span>
+                </div>
+
+                <p className="text-muted-foreground mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1 bg-primary/10 text-primary rounded text-sm"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                {project.current ? (
+                  <span className="inline-flex items-center gap-2 text-green-500 font-medium">
+                    Currently Viewing
+                  </span>
+                ) : (
+                  project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all font-medium"
+                    >
+                      View Live Project
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )
+                )}
+              </div>
+            ))}
+          </div>
+        </div>  
       </section>
 
       {/* Education Section */}
