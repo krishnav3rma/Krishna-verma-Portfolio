@@ -625,7 +625,7 @@ export default function Portfolio() {
                   <div>
                     <p className="font-semibold mb-3">Frameworks & Libraries</p>
                     <div className="flex flex-wrap gap-2">
-                      {["React.js", "Node.js", "Tailwind CSS", "Vite"].map((tech) => (
+                      {["React.js", "React Native", "Node.js", "Next.js", "Tailwind CSS", "Vite"].map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 bg-primary/10 text-primary rounded text-sm"
